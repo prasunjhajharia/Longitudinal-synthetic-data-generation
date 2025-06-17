@@ -6,6 +6,8 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import normalize
 from kneed import KneeLocator
 
+
+
 def extract_consensus_graph(samples, threshold=0.6, num_nodes=2):
     total = len(samples)
     edge_freq = defaultdict(int)
@@ -59,7 +61,6 @@ def extract_segment_cpds(data, allocation, graph, num_categories):
     return np.array(padded_cpds)
 
 def cluster_cpds(cpds, max_k=10):
-    # Remove the segment length (last column) before clustering
     cpds_no_length = cpds[:, :-1]  
 
     # Normalize for distance-based clustering
