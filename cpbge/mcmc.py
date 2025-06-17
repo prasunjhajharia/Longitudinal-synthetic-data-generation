@@ -1,9 +1,10 @@
 import numpy as np
 import networkx as nx
 from collections import defaultdict
-from base_model import BaseModel
-from graph_operations import GraphOperations
-from allocation import Allocation
+from cpbge.base_model import BaseModel
+from cpbge.allocation import Allocation
+from cpbge.graph_operations import GraphOperations
+
 
 class MCMC:
     def __init__(self, num_nodes, max_segments=10):
@@ -66,7 +67,7 @@ class MCMC:
             
             # Store samples after burn-in
             if iteration >= burn_in:
-                if iteration % 10 == 0:  # Save every 10th sample to reduce autocorrelation
+                if iteration % 1000 == 0:  # Save every 10th sample to reduce autocorrelation
                     samples.append((current_graph.copy(), current_allocation.copy(), current_K.copy()))
                     graph_counts[tuple(sorted(current_graph.edges()))] += 1
                     allocation_samples.append(current_allocation.copy())
