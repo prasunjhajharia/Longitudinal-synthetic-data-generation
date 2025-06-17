@@ -43,7 +43,8 @@ class GraphOperations:
                 new_graph.remove_edge(u, v)
             else:
                 return None  # No edge to remove
-
+        return new_graph
+"""
         # REVERSE OPERATION: Reverse u → v to v → u if valid
         elif operation == 'reverse':
             edges = list(current_graph.edges())
@@ -58,5 +59,4 @@ class GraphOperations:
                     return None
             else:
                 return None
-
-        return new_graph
+"""

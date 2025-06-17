@@ -71,8 +71,6 @@ def ib_discretize_from_continuous(X, Y, init_bins=10, max_clusters=5):
     kmeans = KMeans(n_clusters=elbow, n_init=10).fit(py_x)
     x_cluster_map = {i: label for i, label in enumerate(kmeans.labels_)}
     x_clustered = np.array([x_cluster_map[b] for b in x_binned])
-    print("Unique X bins:", np.unique(x_binned))
-    print("Unique X clusters:", np.unique(x_clustered))
     return x_clustered, y_binned
 
 

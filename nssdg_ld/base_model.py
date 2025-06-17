@@ -13,7 +13,6 @@ class CategoricalBaseModel:
 
         child_data = data_subset[-1, :]
 
-        # Dynamically detect number of categories in the current segment
         all_values = data_subset.flatten() if parent_set else child_data
         max_val = int(np.max(all_values)) + 1
         alpha = np.ones(max_val)  # symmetric Dirichlet prior

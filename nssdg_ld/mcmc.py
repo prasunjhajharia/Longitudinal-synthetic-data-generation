@@ -8,7 +8,7 @@ from nssdg_ld.graph_operations import GraphOperations
 
 def count_valid_graph_neighbors(graph, fan_in):
     """
-    Count valid single-edge mutations (add, remove, reverse) under a fan-in constraint.
+    Count valid single-edge mutations (add, remove, reverse) under a fan-in constraint
     """
     nodes = list(graph.nodes())
     num_adds = 0

@@ -12,7 +12,7 @@ class Allocation:
         Returns:
             new_allocation: updated segment allocation matrix [nodes x time]
             new_K: updated number of segments per node
-            acceptance_ratio: prior x proposal ratio (used in MH acceptance)
+            acceptance_ratio: prior x proposal ratio
         """
         new_allocation = current_allocation.copy()
         new_K = current_K.copy()
